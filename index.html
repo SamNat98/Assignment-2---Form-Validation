@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Form Validation</h1>
+<br>
+<h1 style="text-align: center;">
+   <b> Company Registration Form </b>
+</h1>
+<br>
+
+<class style="text-align: center;">
+   <form onsubmit="return validate()">
+
+    <span>First Name</span>
+    <input type="text" id="first" placeholder="First Name" />
+    <label id="lb" style="border: 3px; color: red; visibility: hidden;"> Invalid </label>
+
+    <span>Last Name</span>
+    <input type="text" id="last" placeholder="Last Name" />
+    <label id="lb" style="border: 3px; color: red; visibility: hidden;"> Invalid </label>
+
+    <br>
+    <br>
+
+    <span>Email Address :</span>
+    <input type="text" id="email" placeholder="email adrress" />
+
+    <br><br>
+
+    <span>Password :</span>
+    <input type="password" id="pass" placeholder="Password" />
+    <label id="lb" style="border: 3px; color: red; visibility: hidden;"> Invalid </label>
+
+    <br><br>
+
+    <span>Gender :</span> 
+    <input type="radio" id="male" name="grp" value="Male">Male</input>
+    <input type="radio" id="female" name="grp" value="Female">Female</input>
+
+    <br><br>
+
+    <button type="submit" style="size: 20px;">Submit</button>
+
+   </form>
+
+</class>
+
+    <script>
+
+        function validate(){
+
+            let f = document.getElementById("first");
+            let l = document.getElementById("last");
+            let p = document.getElementById("pass");
+
+            if(f.value.trim() === "")
+            {
+                f.style.border="solid 3px red";
+                document.getElementById("lb").style.visibility="visible";
+                return false;
+            }
+            else if(l.value.trim() === "")
+            {
+                l.style.border="solid 3px red";
+                document.getElementById("lb").style.visibility="visible";
+                return false;
+            }
+            else if(p.value.trim().length<5)
+            {
+                p.style.border="solid 3px red";
+                document.getElementById("lb").style.visibility="visible";
+                return false;
+            }
+            else if(p.value.trim() === "")
+            {
+                p.style.border="solid 3px red";
+                document.getElementById("lb").style.visibility="visible";
+                return false;
+            }
+            else{
+            
+            alert("Your Form has been Submitted");
+            return true;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
